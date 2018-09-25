@@ -15,21 +15,28 @@
             <div class="jumbotron" id="container"></div>
         </div>
         <script type="text/babel">
-            var HelloWorld = React.createClass({
+            var Jumbotron = React.createClass({
                 render: function () {
                     return (
-                        <h1>Hello, batman</h1>
+                        <div>
+                            <h1 className="display-4">Hello, batman</h1>
+                            <p className="lead">Bboy Bruce Wayne website is coming</p>
+                            <hr className="my-4"/>
+                            <p>See u soon...</p>
+                            <p className="lead">
+                                <a className="btn btn-primary btn-lg" href="#" role="button">A Button</a>
+                            </p>
+                        </div>
                     );
                 }
             });
 
-                ReactDOM.render(
-            <div>
-                <HelloWorld/>
-                <p>Bboy Bruce Wayne website is coming</p>
-            </div>,
-            document.querySelector("#container")
-        );
+            ReactDOM.render(
+                <div>
+                    <Jumbotron/>
+                </div>,
+                document.querySelector("#container")
+            );
         </script>
     </body>
 </html>
