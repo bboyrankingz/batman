@@ -11,14 +11,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="jumbotron" id="container"></div>
+        <div class="container-fluid" id="container">
         </div>
         <script type="text/babel">
             var Jumbotron = React.createClass({
                 render: function () {
                     return (
-                        <div>
+                        <div className="jumbotron">
                             <h1 className="display-4">Hello, batman</h1>
                             <p className="lead">Bboy Bruce Wayne website is coming</p>
                             <hr className="my-4"/>
@@ -31,9 +30,21 @@
                 }
             });
 
+            var About = React.createClass({
+                render: function () {
+                    return (
+                        <div>
+                            <h4>About me</h4>
+                            <p className="lead">Total Feeling crew member</p>
+                        </div>
+                    );
+                }
+            });
+
             ReactDOM.render(
                 <div>
                     <Jumbotron/>
+                    <About/>
                 </div>,
                 document.querySelector("#container")
             );
