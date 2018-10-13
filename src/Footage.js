@@ -16,7 +16,7 @@ class Footage extends Component {
     }
 
     componentDidMount() {
-        fetch('https://bboyrankingz.com/media/search/bruce%20wayne.json')
+        fetch('http://localhost:8000/media/search/bruce%20wayne.json')
             .then(response => response.json())
             .then(data => this.setState({ results: data.results }));
     }
@@ -40,7 +40,7 @@ class Footage extends Component {
                         </Row>
 
                         <Row>
-                            {results.map(footage =>
+                            {results.slice(0,4).map(footage =>
                                 <div className="col-lg-3 col-md-6">
                                     <div className="single-publish">
                                         <img src={footage.thumbnail} className="img-fluid" alt="" />

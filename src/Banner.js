@@ -9,7 +9,7 @@ class Banner extends Component {
     constructor(props) {
         super(props);
     }
- 
+
     render() {
         return (
             <div>
@@ -17,14 +17,14 @@ class Banner extends Component {
                     <div className="overlay overlay-bg"></div>
                     <Container>
                         <Row style={{ minHeight: '100vh' }} className="justify-content-center align-items-center">
-                        <div className="col-lg-8">
+                            <div className="col-lg-8">
                                 <div className="text-center">
                                     <p className="text-uppercase text-white">Coming soon...</p>
                                     <h1 className="text-uppercase text-white">Bruce Wayne</h1>
                                 </div>
-                                </div>
+                            </div>
                         </Row>
-                    </Container>               
+                    </Container>
                 </section>
             </div>
         );

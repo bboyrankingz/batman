@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Banner from './Banner';
 import Footage from './Footage';
+import Studio from './Studio';
 
 class App extends Component {
     render() {
@@ -10,6 +11,7 @@ class App extends Component {
                 <Header/>
                 <Banner/>
                 <Footage/>
+                <Studio/>
             </div>
         );
     }
