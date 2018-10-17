@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import About from './About';
 import Banner from './Banner';
 import Footage from './Footage';
 import Studio from './Studio';
@@ -10,8 +11,9 @@ class App extends Component {
             <div>
                 <Header/>
                 <Banner/>
-                <Footage/>
+                <About/>
                 <Studio/>
+                <Footage/>
             </div>
         );
     }

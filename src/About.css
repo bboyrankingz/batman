@@ -1,0 +1,19 @@
+.gray-bg {
+    background: #f9f9ff;
+  }
+
+  .section-title {
+    padding-bottom: 70px;
+  }
+  
+  .section-title h3 {
+    font-weight: 300;
+    font-size: 24px;
+    color: #777777;
+  }
+  
+  .section-title h3 b {
+    font-weight: 300;
+    color: #222222;
+  }
+  

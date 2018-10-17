@@ -16,7 +16,7 @@ class Footage extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/media/search/bruce%20wayne.json')
+        fetch('https://bboyrankingz.com/media/search/bruce%20wayne.json')
             .then(response => response.json())
             .then(data => this.setState({ results: data.results }));
     }
@@ -27,14 +27,13 @@ class Footage extends Component {
 
         return (
             <div>
-                <section id="blog" class="section-full">
+                <section id="blog" className="section-full">
                     <Container>
                         <Row className="justify-content-center">
-
-                            <div class="col-lg-8">
-                                <div class="product-area-title text-center">
-                                    <p class="text-uppercase">Latest From me</p>
-                                    <h2 class="h1">Footage of my last battle, workshop, showcase...</h2>
+                            <div className="col-lg-8">
+                                <div className="product-area-title text-center">
+                                    <p className="text-uppercase">Latest From me</p>
+                                    <h2 className="h1">Footage of my last battle, workshop, showcase...</h2>
                                 </div>
                             </div>
                         </Row>
