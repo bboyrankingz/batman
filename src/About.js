@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import {
     Container,
     Row,
-    Col,
 } from 'reactstrap';
 import './About.css';
 
 class About extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

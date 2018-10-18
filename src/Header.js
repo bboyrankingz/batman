@@ -47,9 +47,9 @@ class Header extends Component {
                                     </Collapse>
                                 </Navbar>
                                 <div className="header-social d-flex align-items-center">
-                                    <a href=""><i className="fa fa-facebook"></i></a>
-                                    <a href=""><i className="fa fa-twitter"></i></a>
-                                    <a href=""><i className="fa fa-linkedin"></i></a>
+                                    <a href="."><i className="fa fa-facebook"></i></a>
+                                    <a href="."><i className="fa fa-twitter"></i></a>
+                                    <a href="."><i className="fa fa-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>

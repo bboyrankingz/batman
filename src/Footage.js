@@ -45,9 +45,9 @@ class Footage extends Component {
                                         <img src={footage.thumbnail} className="img-fluid" alt="" />
                                         <div className="top">
                                             <div className="mb-15 d-flex">
-                                                <a href="#">{footage.created}</a>
+                                                <a href=".">{footage.created}</a>
                                                 <span className="line">|</span>
-                                                <a href="#">By {footage.channel_title}</a>
+                                                <a href=".">By {footage.channel_title}</a>
                                             </div>
                                             <h6 className="text-uppercase"><a href={footage.url}>{footage.title}</a></h6>
                                         </div>

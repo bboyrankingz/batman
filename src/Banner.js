@@ -7,10 +7,6 @@ import {
 import './Banner.css';
 
 class Banner extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
