@@ -70,7 +70,7 @@ class Footage extends Component {
 
         return (
             <div>
-                <section id="blog" className="section-full">
+                <section id="footage" className="section-full">
                     <Container>
                         <Row className="justify-content-center">
                             <div className="col-lg-8">

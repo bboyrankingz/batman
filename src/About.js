@@ -9,7 +9,7 @@ class About extends Component {
     render() {
         return (
             <div>
-                <section className="section-full gray-bg">
+                <section id="about" className="section-full gray-bg">
                     <Container>
                         <Row className="justify-content-center">
                             <div className="col-lg-10">

@@ -10,7 +10,7 @@ class Studio extends Component {
     render() {
         return (
             <div>
-                <section className="section-full studio-area">
+                <section id="studio" className="section-full studio-area">
                     <Container>
                         <Row>
                             <Col className="col-lg-6">
