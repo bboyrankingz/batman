@@ -3,7 +3,12 @@ import {
     Container,
     Row,
 } from 'reactstrap';
+import InfiniteScroll from 'react-infinite-scroller';
 import './Footage.css';
+
+const api = {
+    baseUrl: 'https://bboyrankingz.com',
+};
 
 
 class Footage extends Component {
@@ -12,18 +17,56 @@ class Footage extends Component {
 
         this.state = {
             results: [],
+            hasMoreItems: true,
+            next: null
         };
     }
 
-    componentDidMount() {
-        fetch('https://bboyrankingz.com/media/search/bruce%20wayne.json')
+    loadItems(page) {
+        var url = api.baseUrl + '/media/search/bruce%20wayne.json';
+        if (this.state.next) {
+            url = this.state.next;
+        }
+
+        fetch(url)
             .then(response => response.json())
-            .then(data => this.setState({ results: data.results }));
+            .then(data => {
+                if (data.next) {
+                    this.setState({
+                        results: data.results,
+                        next: data.next
+                    })
+                } else {
+                    this.setState({
+                        hasMoreItems: false
+                    })
+                }
+
+            });
     }
 
     render() {
 
-        const { results } = this.state;
+        const loader = <div className="loader">Loading ...</div>;
+
+        var items = [];
+        this.state.results.map((footage) => {
+            items.push(
+                <div className="col-lg-3 col-md-6">
+                    <div className="single-publish">
+                        <img src={footage.thumbnail} className="img-fluid" alt="" />
+                        <div className="top">
+                            <div className="mb-15 d-flex">
+                                <a href=".">{footage.created}</a>
+                                <span className="line">|</span>
+                                <a href=".">By {footage.channel_title}</a>
+                            </div>
+                            <h6 className="text-uppercase"><a href={footage.url}>{footage.title}</a></h6>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
 
         return (
             <div>
@@ -38,23 +81,16 @@ class Footage extends Component {
                             </div>
                         </Row>
 
-                        <Row>
-                            {results.slice(0,4).map(footage =>
-                                <div className="col-lg-3 col-md-6">
-                                    <div className="single-publish">
-                                        <img src={footage.thumbnail} className="img-fluid" alt="" />
-                                        <div className="top">
-                                            <div className="mb-15 d-flex">
-                                                <a href=".">{footage.created}</a>
-                                                <span className="line">|</span>
-                                                <a href=".">By {footage.channel_title}</a>
-                                            </div>
-                                            <h6 className="text-uppercase"><a href={footage.url}>{footage.title}</a></h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </Row>
+                        <InfiniteScroll
+                            pageStart={0}
+                            loadMore={this.loadItems.bind(this)}
+                            hasMore={this.state.hasMoreItems}
+                            loader={loader}
+                        >
+                            <Row>
+                                {items}
+                            </Row>
+                        </InfiniteScroll>
                     </Container>
                 </section>
             </div>
