@@ -7,3 +7,12 @@ cache:
 script:
   - npm test
   - npm run build
+env:
+  global:
+  - 'SFTP_PASSWORD="XuJhB4ALhG2hATo1raZ92SZTWPb1L1MKLn2ibraHZ7ujE99e/o7Zg3JObhOVDzsBew3r/fnvfCfRDLmm748ODYlzEm6NJZi0/6zvtHF/ItUv+/6MM1+wVUQ/mC0EcxrLRwjhBCdWlc1wJFx7lrDFAFiXJaWWkO05fJQ5bYz5bN8bqRQqCBkO3MbJAxgcwfaZ5IWwXvAwNLSFlhF0TdV3zh71yj2GwPN7XPZcD1IGkq3IhgDOLsjmk6IunZPA+IcnDZ1cof/lKxyC9pSnWxSzSX1WO5vbOx2CSQaR0vN5BuJpsf30DizzZAll2/ZzN81gqaGzzbMO5dE1cKflXnIai9H1gxyoow7nkhhxlxKaMu2O7MaCsr39i/QY6ych+qem8OYbiIGLVVIqzmbPEhWjt2AadU8Z5Tw9rcm/YysBsSI4SkXndx9z3fd8fNi8iUSJGvZH/1rId2NYwtBRdCvHYK/cACM1Z5GhSCwVyvNKY4s6znWjNL96HgzRZL+ncAdkb6eoxAk2CcE9gn6xVOZ0i1cYffo2std7488b7aMvt76VYRfJG35nGmev0p4r3WHAcv9GYNj0Q6L2t0ep46Ma2bfBSYfNrxi9StjNw0m3cT46GunLUzfbYw02p10oZglCqqpbYFSY1mwW/BtfVoHTeWi8qa8B3ENiQcRAzMk39f0="'
+after_success:
+- echo "${SFTP_PASSWORD}" | base64 --decode >/tmp/sftp_rsa
+- curl --ftp-create-dirs
+       -T build/favicon.ico
+       --digest /tmp/sftp_rsa
+       sftp://u94842061:${SFTP_PASSWORD}@home753332536.1and1-data.host
