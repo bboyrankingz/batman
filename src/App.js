@@ -5,6 +5,7 @@ import Banner from './Banner';
 import Footage from './Footage';
 import Studio from './Studio';
 import Activity from './Activity';
+import Contact from './Contact';
 
 class App extends Component {
     render() {
@@ -16,6 +17,7 @@ class App extends Component {
                 <Studio/>
                 <Activity/>
                 <Footage/>
+                <Contact/>
             </div>
         );
     }
