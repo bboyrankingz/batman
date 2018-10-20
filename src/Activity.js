@@ -10,7 +10,7 @@ class Activity extends Component {
 
         return (
             <div>
-                <section id="about" className="section-full gray-bg">
+                <section id="activities" className="section-full gray-bg">
                     <Container>
                         <Row className="justify-content-center">
                             <div className="col-lg-10">

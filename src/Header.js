@@ -21,9 +21,11 @@ class Header extends Component {
                                         <div className="right-bar d-flex align-items-center">
                                             <nav className="d-flex align-items-center">
                                                 <ul className="main-menu">
-                                                    <li><a href="#about">Bruce Wayne</a></li>
                                                     <li><a href="#studio">Break ma Baraque</a></li>
-                                                    <li><a href="#footage">Footage</a></li>
+                                                    <li><a href="#about">Bruce Wayne</a></li>
+                                                    <li><a href="#activities">Cours</a></li>
+                                                    <li><a href="#footage">Videos</a></li>
+                                                    <li><a href="#contact">Contact</a></li>
                                                 </ul>
                                                 <a href className="mobile-btn"><span className="lnr lnr-menu"></span></a>
                                             </nav>
