@@ -36,7 +36,7 @@ class Activity extends Component {
                                     <figcaption className="text-center">
                                         <h5 className="text-uppercase">Culture Hip-Hop</h5>
                                         <p> Expériences sur mesure liées à la culture Hip-Hop : initiation au Breakdance, au Graffiti, au DJing et/ou à la musique live Looping</p>
-                                        <a href="#" className="primary-btn d-inline-flex align-items-center">Réserver<span className="lnr lnr-arrow-right"></span></a>
+                                        <a href="https://docs.google.com/forms/d/1Ph5C91cIYu3rgGkiwuV3tqE2wqVUK5LCIRrSsyTzBj0/edit" className="primary-btn d-inline-flex align-items-center">Réserver<span className="lnr lnr-arrow-right"></span></a>
                                     </figcaption>
                                 </figure>
                             </div>
@@ -46,7 +46,7 @@ class Activity extends Component {
                                     <figcaption className="text-center">
                                         <h5 className="text-uppercase">Animations DJ</h5>
                                         <p>Soirées, Anniversaire, bars et clubs</p>
-                                        <a href="https://docs.google.com/forms/d/1Ph5C91cIYu3rgGkiwuV3tqE2wqVUK5LCIRrSsyTzBj0/edit" className="primary-btn d-inline-flex align-items-center">Contact<span className="lnr lnr-arrow-right"></span></a>
+                                        <a href="#" className="primary-btn d-inline-flex align-items-center">Contact<span className="lnr lnr-arrow-right"></span></a>
                                     </figcaption>
                                 </figure>
                             </div>
