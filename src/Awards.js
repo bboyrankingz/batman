@@ -14,27 +14,45 @@ class Awards extends Component {
 
         this.state = {
             results: [],
+            judges: [],
         };
     }
+
     componentDidMount() {
-        var url = api.baseUrl + '/bboys/api/bruce-wayne.json';
+        var url = api.baseUrl + '/bboys/apis/bruce-wayne.json';
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                this.setState({ results: data.tournamentroundplayers_set })
-            }
-            );
+                this.setState({ results: data.tournamentroundplayers_set, judges: data.jam_memberships })
+            });
+    }
+
+    getAwards(match) {
+        var awards = [];
+        this.state.results
+            .filter((award) => award.round_level === 1 && award.match === match)
+            .sort((a, b) => b.elo - a.elo)
+            .map((award) => {
+                awards.push(
+                    <li>{award.title}</li>
+                );
+            });
+        return awards;
     }
 
     render() {
 
-        var items = [];
-        this.state.results.map((award) => {
-            items.push(
-                <li>{award.title}</li>
-            );
-        });
+        var wins = this.getAwards(1);
+        var losses = this.getAwards(2);
 
+        var judges = [];
+        this.state.judges
+            .filter((award) => award.match === "Judge")
+            .map((award) => {
+                judges.push(
+                    <li>{award.title}</li>
+                );
+            });
         return (
             <div>
                 <section id="awards" class="section-full">
@@ -51,71 +69,42 @@ class Awards extends Component {
                             <div class="col-md-4">
                                 <div class="single-pricing-table">
                                     <div class="top">
-                                        <div class="head text-center">
-                                            <span class="lnr lnr-shirt"></span><br />
-                                            <h5 class="text-white text-uppercase">1er Place</h5>
-                                        </div>
                                         <div class="package text-center">
-                                            <div class="price">1</div>
-                                            <span class="text-white">1er Place</span>
+                                            <div class="price">1er Place</div>
                                         </div>
                                     </div>
-
                                     <div class="bottom text-center">
                                         <ul class="feature text-center">
-                                            {items}
+                                            {wins}
                                         </ul>
-                                        <a href="#" class="primary-btn text-uppercase d-inline-flex align-items-center">More<span class="lnr lnr-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="single-pricing-table">
                                     <div class="top">
-                                        <div class="head text-center">
-                                            <span class="lnr lnr-shirt"></span><br />
-                                            <h5 class="text-white text-uppercase">Business</h5>
-                                        </div>
                                         <div class="package text-center">
-                                            <div class="price">2</div>
-                                            <span class="text-white">2em Place</span>
+                                            <div class="price">2eme Place</div>
                                         </div>
                                     </div>
-
                                     <div class="bottom text-center">
                                         <ul class="feature text-center">
-                                            <li>2.5 GB Photos</li>
-                                            <li>Secure Online Transfer</li>
-                                            <li>Unlimited Styles</li>
-                                            <li>Customer Service</li>
-                                            <li>Manual Backup</li>
+                                            {losses}
                                         </ul>
-                                        <a href="#" class="primary-btn text-uppercase d-inline-flex align-items-center">More<span class="lnr lnr-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="single-pricing-table">
                                     <div class="top">
-                                        <div class="head text-center">
-                                            <span class="lnr lnr-apartment"></span>
-                                            <h5 class="text-white text-uppercase">Ultimate</h5>
-                                        </div>
                                         <div class="package text-center">
-                                            <div class="price">3</div>
-                                            <span class="text-white">Juge</span>
+                                            <div class="price">Juge</div>
                                         </div>
                                     </div>
-
                                     <div class="bottom text-center">
                                         <ul class="feature text-center">
-                                            <li>2.5 GB Photos</li>
-                                            <li>Secure Online Transfer</li>
-                                            <li>Unlimited Styles</li>
-                                            <li>Customer Service</li>
-                                            <li>Manual Backup</li>
+                                            {judges}
                                         </ul>
-                                        <a href="#" class="primary-btn text-uppercase d-inline-flex align-items-center">More<span class="lnr lnr-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
