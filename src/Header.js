@@ -13,7 +13,6 @@ class Header extends Component {
         return (
             <div>
                 <StickyHeader
-                    // This is the sticky part of the header.
                     header={
                         <header className="default-header">
                             <div className="sticky-header">
@@ -26,7 +25,7 @@ class Header extends Component {
                                                     <li><a href="#studio">Break ma Baraque</a></li>
                                                     <li><a href="#footage">Footage</a></li>
                                                 </ul>
-                                                <a href="#" className="mobile-btn"><span className="lnr lnr-menu"></span></a>
+                                                <a href className="mobile-btn"><span className="lnr lnr-menu"></span></a>
                                             </nav>
                                             <div className="header-social d-flex align-items-center">
                                                 <a href="."><i className="fa fa-facebook"></i></a>

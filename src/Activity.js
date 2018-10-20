@@ -46,7 +46,7 @@ class Activity extends Component {
                                     <figcaption className="text-center">
                                         <h5 className="text-uppercase">Animations DJ</h5>
                                         <p>Soirées, Anniversaire, bars et clubs</p>
-                                        <a href="#" className="primary-btn d-inline-flex align-items-center">Contact<span className="lnr lnr-arrow-right"></span></a>
+                                        <a href="#contact" className="primary-btn d-inline-flex align-items-center">Contact<span className="lnr lnr-arrow-right"></span></a>
                                     </figcaption>
                                 </figure>
                             </div>
