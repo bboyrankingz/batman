@@ -4,6 +4,7 @@ import About from './About';
 import Banner from './Banner';
 import Footage from './Footage';
 import Studio from './Studio';
+import Activity from './Activity';
 
 class App extends Component {
     render() {
@@ -13,6 +14,7 @@ class App extends Component {
                 <Banner/>
                 <About/>
                 <Studio/>
+                <Activity/>
                 <Footage/>
             </div>
         );
