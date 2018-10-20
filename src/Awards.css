@@ -1,0 +1,62 @@
+.section-full {
+    padding: 150px 0;
+  }
+
+  .product-area-title {
+    padding-bottom: 70px;
+  }
+  
+  @media (max-width: 991px) {
+    .product-area-title h2 br {
+      display: none;
+    }
+  }
+
+  .single-pricing-table {
+    margin-top: 30px;
+  }
+  
+  .single-pricing-table .top {
+    background-image: -moz-linear-gradient(0deg, #3c408f 0%, #5b61cf 100%);
+    background-image: -webkit-linear-gradient(0deg, #3c408f 0%, #5b61cf 100%);
+    background-image: -ms-linear-gradient(0deg, #3c408f 0%, #5b61cf 100%);
+  }
+  
+  .single-pricing-table .top .head {
+    padding: 35px 20px;
+  }
+  
+  .single-pricing-table .top .head span {
+    font-size: 48px;
+    color: #00ff8c;
+  }
+  
+  .single-pricing-table .top .head h5 {
+    margin-top: 20px;
+  }
+  
+  .single-pricing-table .top .package {
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .single-pricing-table .top .package .price {
+    color: #00ff8c;
+    font-size: 36px;
+    margin-bottom: 10px;
+    line-height: 1em;
+  }
+  
+  .single-pricing-table .bottom {
+    background: #f9f9ff;
+    padding: 35px 20px 50px 20px;
+  }
+  
+  .single-pricing-table .bottom ul {
+    margin-bottom: 50px;
+  }
+  
+  .single-pricing-table .bottom ul li {
+    margin-top: 15px;
+  }
+  

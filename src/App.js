@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import About from './About';
+import Awards from './Awards';
 import Banner from './Banner';
 import Footage from './Footage';
 import Studio from './Studio';
@@ -14,6 +15,7 @@ class App extends Component {
                 <Header/>
                 <Banner/>
                 <About/>
+                <Awards/>
                 <Studio/>
                 <Activity/>
                 <Footage/>
