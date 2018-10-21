@@ -5,7 +5,9 @@ import {
 import './Header.css';
 import 'react-sticky-header/styles.css';
 import StickyHeader from 'react-sticky-header';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 class Header extends Component {
 
@@ -30,8 +32,8 @@ class Header extends Component {
                                                 <a href className="mobile-btn"><span className="lnr lnr-menu"></span></a>
                                             </nav>
                                             <div className="header-social d-flex align-items-center">
-                                                <a href="."><i className="fa fa-facebook"></i></a>
-                                                <a href="."><i className="fa fa-twitter"></i></a>
+                                                <a href="https://www.instagram.com/bboybrucewayne/"><FontAwesomeIcon icon={faInstagram} /></a>
+                                                <a href="https://www.facebook.com/bruceboogiewayne"><FontAwesomeIcon icon={faFacebook} /></a>
                                                 <a href="."><i className="fa fa-linkedin"></i></a>
                                             </div>
                                         </div>
