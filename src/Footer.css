@@ -42,3 +42,19 @@
   .footer-bottom .footer-text a:hover {
     color: #00ff8c;
   }
+  
+  .footer-social {
+    margin-right: -5px;
+  }
+  
+  .footer-social a {
+    font-size: 18px;
+    margin: 0 5px;
+    padding: 0 5px;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .footer-social a:hover {
+    color: #00ff8c;
+  }
