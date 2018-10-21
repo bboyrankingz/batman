@@ -22,7 +22,7 @@ class Footage extends Component {
         };
     }
 
-    loadItems(page) {
+    loadItems() {
         var url = api.baseUrl + '/media/search/bruce%20wayne.json';
         if (this.state.next) {
             url = this.state.next;
@@ -47,7 +47,7 @@ class Footage extends Component {
 
     render() {
 
-        const loader = <div className="loader">Loading ...</div>;
+        const loader = <div className="loader" key="1">Loading ...</div>;
 
         var items = [];
         this.state.results.map((footage) => {

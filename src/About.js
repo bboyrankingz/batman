@@ -36,7 +36,7 @@ Musicien depuis son plus jeune âge, Matthieu s’initie au Live Looping avec se
                                         <h3>De plus, ayant le goût de partager son savoir et marqué par son cursus universitaire, il met en scène des spectacles avec ses différents élèves. Aussi, il intervient en centre social pour des enfants déscolarisés ainsi qu'en prison et développe une initiation danse avec les enfants de l’Insititut National des Jeunes aveugles à Paris. </h3>
                                         <h3>En véritable passionné de la culture Hip-Hop, il organise des jams de danse sur Paris et créer son association afin de promouvoir ces arts auprès de tous les publics. </h3>
                                     </Collapse>
-                                    <a href onClick={() => this.setState({isOpened: true})} className="primary-btn d-inline-flex align-items-center">Show more<span className="lnr lnr-arrow-right"></span></a>
+                                    <a href="#about" onClick={() => this.setState({isOpened: true})} className="primary-btn d-inline-flex align-items-center">Show more<span className="lnr lnr-arrow-right"></span></a>
                                 </div>
                             </div>
                         </Row>

@@ -29,7 +29,7 @@ class Header extends Component {
                                                     <li><a href="#footage">Videos</a></li>
                                                     <li><a href="#contact">Contact</a></li>
                                                 </ul>
-                                                <a href className="mobile-btn"><span className="lnr lnr-menu"></span></a>
+                                                <a href="#" className="mobile-btn"><span className="lnr lnr-menu"></span></a>
                                             </nav>
                                             <div className="header-social d-flex align-items-center">
                                                 <a href="https://www.instagram.com/bboybrucewayne/"><FontAwesomeIcon icon={faInstagram} /></a>

@@ -55,54 +55,54 @@ class Awards extends Component {
             });
         return (
             <div>
-                <section id="awards" class="section-full">
+                <section id="awards" className="section-full">
                     <Container>
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="product-area-title text-center">
-                                    <p class="text-uppercase">Palmares</p>
-                                    <h2 class="h1">Mon palmares individuel et par equipe</h2>
+                        <div className="row justify-content-center">
+                            <div className="col-lg-8">
+                                <div className="product-area-title text-center">
+                                    <p className="text-uppercase">Palmares</p>
+                                    <h2 className="h1">Mon palmares individuel et par equipe</h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="single-pricing-table">
-                                    <div class="top">
-                                        <div class="package text-center">
-                                            <div class="price">1er Place</div>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="single-pricing-table">
+                                    <div className="top">
+                                        <div className="package text-center">
+                                            <div className="price">1er Place</div>
                                         </div>
                                     </div>
-                                    <div class="bottom text-center">
-                                        <ul class="feature text-center">
+                                    <div className="bottom text-center">
+                                        <ul className="feature text-center">
                                             {wins}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="single-pricing-table">
-                                    <div class="top">
-                                        <div class="package text-center">
-                                            <div class="price">2eme Place</div>
+                            <div className="col-md-4">
+                                <div className="single-pricing-table">
+                                    <div className="top">
+                                        <div className="package text-center">
+                                            <div className="price">2eme Place</div>
                                         </div>
                                     </div>
-                                    <div class="bottom text-center">
-                                        <ul class="feature text-center">
+                                    <div className="bottom text-center">
+                                        <ul className="feature text-center">
                                             {losses}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="single-pricing-table">
-                                    <div class="top">
-                                        <div class="package text-center">
-                                            <div class="price">Juge</div>
+                            <div className="col-md-4">
+                                <div className="single-pricing-table">
+                                    <div className="top">
+                                        <div className="package text-center">
+                                            <div className="price">Juge</div>
                                         </div>
                                     </div>
-                                    <div class="bottom text-center">
-                                        <ul class="feature text-center">
+                                    <div className="bottom text-center">
+                                        <ul className="feature text-center">
                                             {judges}
                                         </ul>
                                     </div>
