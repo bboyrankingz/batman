@@ -1,0 +1,44 @@
+.single-footer-widget {
+    margin-bottom: 30px;
+  }
+
+  footer {
+    background: #222222;
+  }
+  
+  footer .footer-nav {
+    margin-top: -7px;
+  }
+  
+  footer .footer-nav li {
+    margin-top: 8px;
+  }
+  
+  footer .footer-nav li a:hover {
+    color: #00ff8c;
+  }
+
+  .instafeed {
+    margin: -5px;
+  }
+  
+  .instafeed li {
+    width: 25%;
+  }
+  
+  .instafeed li img {
+    margin: 5px;
+  }
+
+  .single-footer-widget {
+    margin-bottom: 30px;
+  }
+  
+  .footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+  }
+  
+  .footer-bottom .footer-text a:hover {
+    color: #00ff8c;
+  }

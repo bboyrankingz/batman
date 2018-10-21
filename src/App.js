@@ -7,6 +7,7 @@ import Footage from './Footage';
 import Studio from './Studio';
 import Activity from './Activity';
 import Contact from './Contact';
+import Footer from './Footer';
 
 class App extends Component {
     render() {
@@ -20,6 +21,7 @@ class App extends Component {
                 <Activity/>
                 <Footage/>
                 <Contact/>
+                <Footer/>
             </div>
         );
     }
