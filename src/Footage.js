@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import InfiniteScroll from 'react-infinite-scroller';
 import './Footage.css';
+import axios from 'axios';
 
 const api = {
     baseUrl: 'https://bboyrankingz.com',
@@ -18,48 +19,48 @@ class Footage extends Component {
         this.state = {
             results: [],
             hasMoreItems: true,
-            next: null
+            next: null,
+            error: null
         };
     }
-
     loadItems() {
         var url = api.baseUrl + '/media/search/bruce%20wayne.json';
         if (this.state.next) {
             url = this.state.next;
         }
-
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.next) {
+        axios.get(url)
+            .then(result => {
+                if (result.data.next) {
                     this.setState({
-                        results: data.results,
-                        next: data.next
+                        results: result.data.results,
+                        next: result.data.next,
                     })
                 } else {
                     this.setState({
                         hasMoreItems: false
                     })
                 }
-
-            });
+            })
+            .catch(error => this.setState({ error: error, hasMoreItems: false }));
     }
 
     render() {
-
+        const { results, hasMoreItems, error } = this.state;
         const loader = <div className="loader" key="1">Loading ...</div>;
 
+        if (error) {
+            return <p>{error.message}</p>;
+        }
+
         var items = [];
-        this.state.results.map((footage) => {
+        results.map((footage) => {
             items.push(
-                <div className="col-lg-3 col-md-6">
+                <div className="col-lg-3 col-md-6" key={footage.id}>
                     <div className="single-publish">
                         <img src={footage.thumbnail} className="img-fluid" alt="" />
                         <div className="top">
                             <div className="mb-15 d-flex">
-                                <a href=".">{footage.created}</a>
-                                <span className="line">|</span>
-                                <a href=".">By {footage.channel_title}</a>
+                                <a href={footage.url}>{footage.channel_title}</a>
                             </div>
                             <h6 className="text-uppercase"><a href={footage.url}>{footage.title}</a></h6>
                         </div>
@@ -84,7 +85,7 @@ class Footage extends Component {
                         <InfiniteScroll
                             pageStart={0}
                             loadMore={this.loadItems.bind(this)}
-                            hasMore={this.state.hasMoreItems}
+                            hasMore={hasMoreItems}
                             loader={loader}
                         >
                             <Row>
