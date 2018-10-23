@@ -8,10 +8,12 @@ import './Banner.css';
 
 class Banner extends Component {
     render() {
+        var vids = ["5XX7lhChhYk", "1NEmdkfASYs", "KAn7hS5yjAs", "IQWzJCGMhgY", "7pUo88NiTfg"]
+        var id = vids[Math.floor(Math.random() * Math.floor(5))];
         return (
             <div>
 
-                <YoutubeBackground videoId="1NEmdkfASYs" overlay="rgba(0,0,0,.4)">
+                <YoutubeBackground videoId={id} overlay="rgba(0,0,0,.4)">
 
                     <section className="banner-area relative">
                         <div className="overlay overlay-bg"></div>
