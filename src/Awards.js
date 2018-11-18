@@ -28,31 +28,23 @@ export class Awards extends Component {
     }
 
     getAwards(match) {
-        var awards = [];
-        this.state.results
+        return this.state.results
             .filter((award) => award.round_level === 1 && award.match === match)
             .sort((a, b) => b.elo - a.elo)
             .map((award) => {
-                awards.push(
-                    <li>{award.title}</li>
-                );
+                return <li>{award.title}</li>;
             });
-        return awards;
     }
 
     render() {
-
         var wins = this.getAwards(1);
         var losses = this.getAwards(2);
-
-        var judges = [];
-        this.state.judges
+        var judges = this.state.judges
             .filter((award) => award.match === "Judge")
             .map((award) => {
-                judges.push(
-                    <li>{award.title}</li>
-                );
+                return <li>{award.title}</li>;
             });
+
         return (
             <div>
                 <section id="awards" className="section-full">
