@@ -6,6 +6,7 @@ import {
 import InfiniteScroll from 'react-infinite-scroller';
 import './Footage.css';
 import axios from 'axios';
+import {Video} from './Video';
 
 const api = {
     baseUrl: 'https://bboyrankingz.com',
@@ -52,21 +53,8 @@ export class Footage extends Component {
             return <p>{error.message}</p>;
         }
 
-        var items = [];
-        results.map((footage) => {
-            items.push(
-                <div className="col-lg-3 col-md-6" key={footage.id}>
-                    <div className="single-publish">
-                        <img src={footage.thumbnail} className="img-fluid" alt="" />
-                        <div className="top">
-                            <div className="mb-15 d-flex">
-                                <a href={footage.url}>{footage.channel_title}</a>
-                            </div>
-                            <h6 className="text-uppercase"><a href={footage.url}>{footage.title}</a></h6>
-                        </div>
-                    </div>
-                </div>
-            );
+        var items = results.map((footage) => {
+            return <Video footage={footage}/>;
         });
 
         return (
