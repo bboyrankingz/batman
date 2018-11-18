@@ -12,7 +12,7 @@ const api = {
 };
 
 
-class Footage extends Component {
+export class Footage extends Component {
     constructor(props) {
         super(props);
 
@@ -98,5 +98,3 @@ class Footage extends Component {
         );
     }
 }
-
-export default Footage;

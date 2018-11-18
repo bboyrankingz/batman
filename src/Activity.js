@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import './Activity.css';
 
-class Activity extends Component {
+export class Activity extends Component {
     render() {
 
         return (
@@ -57,5 +57,3 @@ class Activity extends Component {
         );
     }
 }
-
-export default Activity;

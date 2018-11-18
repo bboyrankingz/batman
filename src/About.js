@@ -6,7 +6,7 @@ import {
 import './About.css';
 import { Collapse } from 'react-collapse';
 
-class About extends Component {
+export class About extends Component {
     constructor(props) {
         super(props);
         this.state = {isOpened: false};
@@ -46,5 +46,3 @@ Musicien depuis son plus jeune âge, Matthieu s’initie au Live Looping avec se
         );
     }
 }
-
-export default About;

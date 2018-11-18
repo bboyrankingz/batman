@@ -8,7 +8,7 @@ const api = {
     baseUrl: 'https://bboyrankingz.com',
 };
 
-class Awards extends Component {
+export class Awards extends Component {
     constructor(props) {
         super(props);
 
@@ -115,5 +115,3 @@ class Awards extends Component {
         );
     }
 }
-
-export default Awards;

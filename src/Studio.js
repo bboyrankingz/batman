@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 import './Studio.css';
 
-class Studio extends Component {
+export class Studio extends Component {
     render() {
         return (
             <div>
@@ -25,5 +25,3 @@ class Studio extends Component {
         );
     }
 }
-
-export default Studio;

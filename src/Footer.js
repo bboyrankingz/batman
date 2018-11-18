@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-class Footer extends Component {
+
+export class Footer extends Component {
     render() {
         return (
             <div>
@@ -78,5 +79,3 @@ class Footer extends Component {
         );
     }
 }
-
-export default Footer;

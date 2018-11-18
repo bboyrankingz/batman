@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 import './Banner.css';
 
-class Banner extends Component {
+export class Banner extends Component {
     render() {
         var vids = ["5XX7lhChhYk", "1NEmdkfASYs", "KAn7hS5yjAs", "IQWzJCGMhgY", "7pUo88NiTfg"]
         var id = vids[Math.floor(Math.random() * Math.floor(5))];
@@ -34,5 +34,3 @@ class Banner extends Component {
         );
     }
 }
-
-export default Banner;

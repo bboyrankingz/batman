@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-class Header extends Component {
+export class Header extends Component {
 
     render() {
         return (
@@ -48,5 +48,3 @@ class Header extends Component {
         );
     }
 }
-
-export default Header;
