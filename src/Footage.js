@@ -6,7 +6,7 @@ import {
 import InfiniteScroll from 'react-infinite-scroller';
 import './Footage.css';
 import axios from 'axios';
-import {Video} from './Video';
+import { Video } from './Video';
 
 const api = {
     baseUrl: 'https://bboyrankingz.com',
@@ -54,35 +54,33 @@ export class Footage extends Component {
         }
 
         var items = results.map((footage) => {
-            return <Video footage={footage}/>;
+            return <Video footage={footage} />;
         });
 
         return (
-            <div>
-                <section id="footage" className="section-full">
-                    <Container>
-                        <Row className="justify-content-center">
-                            <div className="col-lg-8">
-                                <div className="product-area-title text-center">
-                                    <p className="text-uppercase">Latest From me</p>
-                                    <h2 className="h1">Footage of my last battle, workshop, showcase...</h2>
-                                </div>
+            <section id="footage" className="section-full">
+                <Container>
+                    <Row className="justify-content-center">
+                        <div className="col-lg-8">
+                            <div className="product-area-title text-center">
+                                <p className="text-uppercase">Latest From me</p>
+                                <h2 className="h1">Footage of my last battle, workshop, showcase...</h2>
                             </div>
-                        </Row>
+                        </div>
+                    </Row>
 
-                        <InfiniteScroll
-                            pageStart={0}
-                            loadMore={this.loadItems.bind(this)}
-                            hasMore={hasMoreItems}
-                            loader={loader}
-                        >
-                            <Row>
-                                {items}
-                            </Row>
-                        </InfiniteScroll>
-                    </Container>
-                </section>
-            </div>
+                    <InfiniteScroll
+                        pageStart={0}
+                        loadMore={this.loadItems.bind(this)}
+                        hasMore={hasMoreItems}
+                        loader={loader}
+                    >
+                        <Row>
+                            {items}
+                        </Row>
+                    </InfiniteScroll>
+                </Container>
+            </section>
         );
     }
 }
