@@ -15,9 +15,9 @@
   }
   
   .is-sticky .sticky-header {
-    background: -moz-linear-gradient(left, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
-    background: -webkit-linear-gradient(left, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
-    background: linear-gradient(to right, rgba(60, 64, 143, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
+    background: -moz-linear-gradient(left, rgba(4, 4, 15, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
+    background: -webkit-linear-gradient(left, rgba(1, 1, 5, 0.95) 0%, rgba(91, 97, 207, 0.95) 100%);
+    background: linear-gradient(to right, rgba(2, 3, 15, 0.95) 0%, rgba(1, 2, 12, 0.95) 100%);
   }
 
   .header-social {
@@ -66,7 +66,7 @@
   color: rgba(255, 255, 255, 0.5);
   margin: 0 20px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 @media (max-width: 991px) {
