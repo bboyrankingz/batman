@@ -14,7 +14,7 @@ export class Awards extends Component {
 
         this.state = {
             results: [],
-            judges: [],
+            members: [],
         };
     }
 
@@ -23,27 +23,47 @@ export class Awards extends Component {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                this.setState({ results: data.tournamentroundplayers_set, judges: data.jam_memberships })
+                this.setState({ results: data.tournamentroundplayers_set, members: data.jam_memberships })
             });
     }
 
-    getAwards(match) {
+    getAwards() {
+        var li;
+        var year;
         return this.state.results
-            .filter((award) => award.round_level === 1 && award.match === match)
-            .sort((a, b) => b.elo - a.elo)
+            .filter((award) => award.round_level === 1 && award.match === 1)
+            .sort((a, b) => b.event_at.slice(0, 4) - a.event_at.slice(0, 4))
             .map((award) => {
-                return <li>{award.title}</li>;
+                li = "";
+                if (year !== award.event_at.slice(0, 4)) {
+                    year = award.event_at.slice(0, 4);
+                    li = <li><u>{year}</u></li>;
+                }
+                return <div>{li}<li>{award.title}</li></div>;
+            });
+    }
+
+    getMember(type) {
+        var year;
+        var li;
+
+        return this.state.members
+            .filter((award) => award.match === type)
+            .sort((a, b) => b.event_at.slice(0, 4) - a.event_at.slice(0, 4))
+            .map((award) => {
+                li = "";
+                if (year !== award.event_at.slice(0, 4)) {
+                    year = award.event_at.slice(0, 4);
+                    li = <li><u>{year}</u></li>;
+                }
+                return <div>{li}<li>{award.title}</li></div>;
             });
     }
 
     render() {
-        var wins = this.getAwards(1);
-        var losses = this.getAwards(2);
-        var judges = this.state.judges
-            .filter((award) => award.match === "Judge")
-            .map((award) => {
-                return <li>{award.title}</li>;
-            });
+        var wins = this.getAwards();
+        var workshop = this.getMember("Teacher");
+        var judges = this.getMember("Judge");
 
         return (
             <section id="awards" className="section-full">
@@ -75,12 +95,12 @@ export class Awards extends Component {
                             <div className="single-pricing-table">
                                 <div className="top">
                                     <div className="package text-center">
-                                        <div className="price">2eme Place</div>
+                                        <div className="price">Workshops</div>
                                     </div>
                                 </div>
                                 <div className="bottom text-center">
                                     <ul className="feature text-center">
-                                        {losses}
+                                        {workshop}
                                     </ul>
                                 </div>
                             </div>
