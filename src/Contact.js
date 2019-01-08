@@ -16,20 +16,27 @@ export class Contact extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-6 mt-30">
+                        <div className="col-lg-9 mt-30">
                             <div className="row">
-                                <div className="col-sm-6">
+                                <div className="col-sm-4">
                                     <div className="address mt-20">
                                         <h6 className="text-uppercase mb-15">Adresse</h6>
                                         <p>89 rue Rebeval 75019, Paris</p>
                                     </div>
                                 </div>
-                                <div className="col-sm-6">
+                                <div className="col-sm-4">
                                     <div className="address mt-20">
                                         <h6 className="text-uppercase mb-15">Telephone</h6>
                                         <a href="tel:0000">+33 7 61 88 57 54</a>
                                     </div>
                                 </div>
+                                <div className="col-sm-4">
+                                    <div className="address mt-20">
+                                        <h6 className="text-uppercase mb-15">CV</h6>
+                                        <u><a href={require('./files/CV.pdf')} download>Télécharger</a></u>
+                                    </div>
+                                </div>
+
                             
                             </div>
                         </div>
