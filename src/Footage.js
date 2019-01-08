@@ -7,6 +7,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import './Footage.css';
 import axios from 'axios';
 import { Video } from './Video';
+import { Collapse } from 'react-collapse';
 
 const api = {
     baseUrl: 'https://bboyrankingz.com',
@@ -21,7 +22,8 @@ export class Footage extends Component {
             results: [],
             hasMoreItems: true,
             next: null,
-            error: null
+            error: null,
+            isOpened: false
         };
     }
     loadItems() {
@@ -46,6 +48,7 @@ export class Footage extends Component {
     }
 
     render() {
+        const { isOpened } = this.state;
         const { results, hasMoreItems, error } = this.state;
         const loader = <div className="loader" key="1">Loading ...</div>;
 
@@ -60,6 +63,9 @@ export class Footage extends Component {
         return (
             <section id="footage" className="section-full">
                 <Container>
+
+
+
                     <Row className="justify-content-center">
                         <div className="col-lg-8">
                             <div className="product-area-title text-center">
@@ -68,18 +74,24 @@ export class Footage extends Component {
                             </div>
                         </div>
                     </Row>
+                    
+                    <Collapse isOpened={isOpened}>
 
-                    <InfiniteScroll
-                        pageStart={0}
-                        loadMore={this.loadItems.bind(this)}
-                        hasMore={hasMoreItems}
-                        loader={loader}
-                    >
-                        <Row>
-                            {items}
-                        </Row>
-                    </InfiniteScroll>
+                        <InfiniteScroll
+                            pageStart={0}
+                            loadMore={this.loadItems.bind(this)}
+                            hasMore={hasMoreItems}
+                            loader={loader}
+                        >
+                            <Row>
+                                {items}
+                            </Row>
+                        </InfiniteScroll>
+                    </Collapse>
+
+                    <a href="#footage" onClick={() => this.setState(prevState => ({ isOpened: !prevState.isOpened }))} className="primary-btn d-inline-flex align-items-center">Show more<span className="lnr lnr-arrow-right"></span></a>
                 </Container>
+
             </section>
         );
     }
